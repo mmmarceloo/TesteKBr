@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J+USEQJujvt1uJCL48a7ff7mXAlms0AyrdF0lJiCLZWV2W8JGA9EkE5pjQf79fZUvm31urjzA3CZpxrc2TrzCA==",
+  "dgSpecHash": "jgn916VuqpF5A4YwxExscDxUUtnKPCHXxdSNcXRNKj3G2LLc//BokHkarVUw978nwnfR3/TtYccJWU12aK+UPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\porca\\Desktop\\Teste KBR\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj",
+  "projectFilePath": "C:\\Users\\porca\\Desktop\\Teste KBR\\TesteKBr\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\porca\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\porca\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

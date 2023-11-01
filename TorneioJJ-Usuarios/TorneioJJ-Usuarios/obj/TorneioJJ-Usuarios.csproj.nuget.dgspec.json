@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\porca\\Desktop\\Teste KBR\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj": {}
+    "C:\\Users\\porca\\Desktop\\Teste KBR\\TesteKBr\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\porca\\Desktop\\Teste KBR\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj": {
+    "C:\\Users\\porca\\Desktop\\Teste KBR\\TesteKBr\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\porca\\Desktop\\Teste KBR\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj",
+        "projectUniqueName": "C:\\Users\\porca\\Desktop\\Teste KBR\\TesteKBr\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj",
         "projectName": "TorneioJJ-Usuarios",
-        "projectPath": "C:\\Users\\porca\\Desktop\\Teste KBR\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj",
+        "projectPath": "C:\\Users\\porca\\Desktop\\Teste KBR\\TesteKBr\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios.csproj",
         "packagesPath": "C:\\Users\\porca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\porca\\Desktop\\Teste KBR\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\obj\\",
+        "outputPath": "C:\\Users\\porca\\Desktop\\Teste KBR\\TesteKBr\\TorneioJJ-Usuarios\\TorneioJJ-Usuarios\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
