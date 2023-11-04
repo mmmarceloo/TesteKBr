@@ -1,7 +1,7 @@
 # TesteKBr
-##processo seletivo Analista Desenvolvedor Back-end Jr
+## processo seletivo Analista Desenvolvedor Back-end Jr
 
-###Backend do projeto
+### Backend do projeto
 
 Para o desenvolvimento da API foram desenvolvidos microserviços que trabalham separadamente para servir o cliente, aqui estão eles listados:
 TorneioJJ-Usuarios -> fornece funcionalidades para gerenciar os usuarios, como o CRUD, login, troca e reset de senha.
