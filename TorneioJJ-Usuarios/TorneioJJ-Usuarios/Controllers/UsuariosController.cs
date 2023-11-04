@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TorneioJJ_Usuarios.Context;
 using TorneioJJ_Usuarios.Models;
+using TorneioJJ_Usuarios.Services;
 
 namespace TorneioJJ_Usuarios.Controllers
 {
@@ -9,11 +11,42 @@ namespace TorneioJJ_Usuarios.Controllers
     public class UsuariosController : Controller
     {
         private readonly UsuarioService _usuarioService;
+        private readonly EsqueceuSenhaService _esqueceuSenhaService;
 
-        public UsuariosController(UsuarioService usuarioService)
+        public UsuariosController(UsuarioService usuarioService, EsqueceuSenhaService esqueceuSenhaService)
         {
             _usuarioService = usuarioService;
+            _esqueceuSenhaService = esqueceuSenhaService;
         }
+
+        [HttpPost]
+        [Route("validar-login")]
+        public IActionResult ValidarLogin([FromBody] UsuarioLogin usuarioLogin)
+        {
+            if(usuarioLogin.email == "admin@admin")
+            {
+                LoginResponse loginAdmin = new LoginResponse();
+                loginAdmin.Id = 0;
+                loginAdmin.Nome = "Admin";
+
+                return Ok(loginAdmin);
+            }
+
+            // Verifica se o usuário com o email fornecido existe no banco de dados.
+            var loginResponse = _usuarioService.Login(usuarioLogin.email, usuarioLogin.senha);
+
+            if (loginResponse != null)
+            {
+                // Credenciais válidas
+                return Ok(loginResponse); // Retorna o objeto LoginResponse
+            }
+            else
+            {
+                // Credenciais inválidas
+                return Unauthorized();
+            }
+        }
+
 
         [HttpPost]
         [Route("salvar")]
@@ -49,6 +82,41 @@ namespace TorneioJJ_Usuarios.Controllers
             _usuarioService.AtualizarUsuario(usuarioExistente);
 
             return Ok(usuarioExistente);
+        }
+
+        [HttpPut]
+        [Route("muda-senha")]
+        public IActionResult MudaSenha([FromBody] UsuarioAlteraSenha usuarioAlteraSenha)
+        {
+            if(usuarioAlteraSenha.Id == 0)
+            {
+                return Ok(new { message = "Admin não muda senha." });
+            }
+
+            var sucesso = _usuarioService.AlteraSenha(usuarioAlteraSenha.Id, usuarioAlteraSenha.Senha_Antiga, usuarioAlteraSenha.Senha_Nova);
+
+            if (sucesso)
+            {
+                return Ok(new { message = "Senha alterada com sucesso." });
+            }
+            else
+            {
+                return BadRequest(new { message = "Não foi possível alterar a senha. Verifique as informações fornecidas." });
+            }
+        }
+        [HttpPost]
+        [Route("esqueceu-senha")]
+        public IActionResult EsqueceuSenha([FromBody] EsqueceuSenhaRequest request)
+        {
+            bool resultado = _esqueceuSenhaService.EnviarEmailRedefinicaoSenha(request.Email, request.id);
+            if (resultado)
+            {
+                return Ok(new { message = "E-mail de redefinição de senha enviado com sucesso." });
+            }
+            else
+            {
+                return BadRequest(new { message = "Erro ao enviar o email!" });
+            }
         }
 
         [HttpDelete]

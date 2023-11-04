@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TorneioJJ_Usuarios.Context;
 using TorneioJJ_Usuarios.Models;
+using TorneioJJ_Usuarios.Services;
 
 public class UsuarioService
 {
     private readonly MyDbContext _context;
+    private readonly EsqueceuSenhaService _esqueceuSenhaService;
 
     public UsuarioService(MyDbContext context)
     {
@@ -80,6 +82,43 @@ public class UsuarioService
         }
 
         return query.ToList();
+    }
+    public LoginResponse Login(string email, string senha)
+    {
+        // Verifica se há um usuário com o email fornecido no banco de dados.
+        var usuario = _context.Usuarios.FirstOrDefault(u => u.email == email);
+
+        if (usuario == null || usuario.senha != senha)
+        {
+            return null; // Login falhou
+        }
+
+        // Login bem-sucedido
+        return new LoginResponse
+        {
+            Id = usuario.Id,
+            Nome = usuario.usuario
+        };
+    }
+
+    public bool AlteraSenha(int id, string senhaAntiga, string senhaNova) {
+        var usuario = _context.Usuarios.FirstOrDefault(u => u.Id == id);
+
+        if (usuario == null)
+        {
+            return false; // Usuário não encontrado
+        }
+
+        if (usuario.senha != senhaAntiga)
+        {
+            return false; // Senha antiga incorreta
+        }
+
+        usuario.senha = senhaNova;
+        _context.Entry(usuario).State = EntityState.Modified;
+        _context.SaveChanges();
+
+        return true; // Senha alterada com sucesso
     }
 
 }

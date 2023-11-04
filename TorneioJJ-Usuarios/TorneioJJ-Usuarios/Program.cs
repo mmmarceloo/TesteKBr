@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TorneioJJ_Usuarios.Context;
+using TorneioJJ_Usuarios.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<EsqueceuSenhaService>();
+builder.Services.AddScoped<GerarTokenService>();
 
 
 var app = builder.Build();

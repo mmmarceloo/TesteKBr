@@ -172,3 +172,15 @@ C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\
 C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\obj\Debug\net6.0\TorneioJJ-Usuarios.pdb
 C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\obj\Debug\net6.0\TorneioJJ-Usuarios.genruntimeconfig.cache
 C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\obj\Debug\net6.0\ref\TorneioJJ-Usuarios.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\jose-jwt.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\MailKit.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\MimeKit.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\SendGrid.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\StarkbankEcdsa.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\porca\Desktop\Teste KBR\TesteKBr\TorneioJJ-Usuarios\TorneioJJ-Usuarios\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
