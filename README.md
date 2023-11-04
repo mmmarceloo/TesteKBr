@@ -8,7 +8,7 @@ TorneioJJ-Usuarios -> fornece funcionalidades para gerenciar os usuarios, como o
 Esse serviço possui um Controller, onde chegam as requisições e conta com Services que separam as responsabilidades do sistema, como acesso ao
 banco de dados, serviço de e-mail e geração de Token.
 
-**Informações**:
+# **Informações**:
 
 - Para a base de dados foi utilizado o SQLserver.
 - o Banco de dados é gerado através de Migrations usando o conceito de code-first.
