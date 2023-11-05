@@ -34,10 +34,11 @@ namespace TorneioJJ_Usuarios.Services
             try
             {
                 var mail = new MailMessage();
-                mail.From = new MailAddress("KBR");
+                mail.From = new MailAddress(_configuration["EmailConfig:Username"]);
                 mail.To.Add(email);
                 mail.Subject = "Redefinição de senha";
-                mail.Body = "Redefina a sua senha clicando no link";
+                string resetLink = $"file:///{_configuration["PathResetarSenha:Path"].Replace("\\", "/")}/reset-senha.html?token={resetToken}";
+                mail.Body = $"Clique aqui para redefinir sua senha: <a href='{resetLink}'>{resetLink}</a>";
                 mail.IsBodyHtml = true;
 
                 SmtpClient smtpClient = new SmtpClient();
@@ -56,6 +57,12 @@ namespace TorneioJJ_Usuarios.Services
             {
                 return false;
             }
+        }
+
+        public int RecuperaId(string token)
+        {
+            return _gerarTokenService.DecodeJwtToken(token);
+
         }
     }
 }

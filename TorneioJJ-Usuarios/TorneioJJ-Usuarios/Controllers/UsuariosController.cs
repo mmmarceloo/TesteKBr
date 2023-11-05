@@ -104,6 +104,7 @@ namespace TorneioJJ_Usuarios.Controllers
                 return BadRequest(new { message = "Não foi possível alterar a senha. Verifique as informações fornecidas." });
             }
         }
+
         [HttpPost]
         [Route("esqueceu-senha")]
         public IActionResult EsqueceuSenha([FromBody] EsqueceuSenhaRequest request)
@@ -118,6 +119,33 @@ namespace TorneioJJ_Usuarios.Controllers
                 return BadRequest(new { message = "Erro ao enviar o email!" });
             }
         }
+
+        [HttpPost]
+        [Route("redefine-senha")]
+        public IActionResult RedefineSenha([FromBody] RedefineSenha request)
+        {
+            // Verifique se a solicitação é válida, por exemplo, se a nova senha é segura o suficiente.
+
+            if (string.IsNullOrEmpty(request.senha))
+            {
+                return BadRequest(new { message = "A nova senha não pode estar em branco." });
+            }
+
+         
+            int id = _esqueceuSenhaService.RecuperaId(request.Token);
+
+            var sucesso = _usuarioService.RedefineSenha(id, request.senha);
+
+            if (sucesso)
+            {
+                return Ok(new { message = "Senha redefinida com sucesso." });
+            }
+            else
+            {
+                return BadRequest(new { message = "Erro ao redefinir a senha." });
+            }
+        }
+
 
         [HttpDelete]
         [Route("excluir/{id}")]

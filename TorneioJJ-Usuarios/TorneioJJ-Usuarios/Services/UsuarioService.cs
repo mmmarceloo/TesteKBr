@@ -121,4 +121,20 @@ public class UsuarioService
         return true; // Senha alterada com sucesso
     }
 
+    public bool RedefineSenha(int id, string senha)
+    {
+        var usuario = _context.Usuarios.FirstOrDefault(u => u.Id == id);
+
+        if (usuario == null)
+        {
+            return false; // Usuário não encontrado
+        }
+
+        usuario.senha = senha;
+        _context.Entry(usuario).State = EntityState.Modified;
+        _context.SaveChanges();
+
+        return true; // Senha alterada com sucesso
+    }
+
 }
