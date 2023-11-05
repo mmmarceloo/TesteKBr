@@ -8,6 +8,12 @@ TorneioJJ-Usuarios -> fornece funcionalidades para gerenciar os usuarios, como o
 Esse serviço possui um Controller, onde chegam as requisições e conta com Services que separam as responsabilidades do sistema, como acesso ao
 banco de dados, serviço de e-mail e geração de Token.
 
+# **Importante:**:
+Para o envio do link de redefinicao de email, colocar a URL correta em appsettings, na seção:
+"PathResetarSenha": {
+    "Path": "seu-caminho\\Teste KBR\\TesteKBR-Front\\painel\\painel\\"
+  }
+
 # **Informações**:
 
 - Para a base de dados foi utilizado o SQLserver.
