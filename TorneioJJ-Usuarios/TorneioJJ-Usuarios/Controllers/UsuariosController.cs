@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TorneioJJ_Usuarios.Context;
 using TorneioJJ_Usuarios.Models;
 using TorneioJJ_Usuarios.Services;
 
@@ -28,6 +26,7 @@ namespace TorneioJJ_Usuarios.Controllers
                 LoginResponse loginAdmin = new LoginResponse();
                 loginAdmin.Id = 0;
                 loginAdmin.Nome = "Admin";
+                loginAdmin.Perfil = "administrador";
 
                 return Ok(loginAdmin);
             }

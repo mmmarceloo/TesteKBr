@@ -10,7 +10,7 @@ public class UsuarioService
 
     public UsuarioService(MyDbContext context)
     {
-        _context = context;
+        _context = context; 
     }
 
     public void SalvarUsuario(Usuario usuario)
@@ -97,7 +97,8 @@ public class UsuarioService
         return new LoginResponse
         {
             Id = usuario.Id,
-            Nome = usuario.usuario
+            Nome = usuario.usuario,
+            Perfil = usuario.perfil
         };
     }
 

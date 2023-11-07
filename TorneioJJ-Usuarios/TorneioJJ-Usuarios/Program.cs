@@ -4,9 +4,6 @@ using TorneioJJ_Usuarios.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configurar a configuração
-builder.Configuration.AddJsonFile("appsettings.json");
-
 // Configura a configuração
 builder.Configuration.AddJsonFile("appsettings.json");
 
