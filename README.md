@@ -7,6 +7,10 @@ Para o desenvolvimento da API foram desenvolvidos microserviços que trabalham s
 TorneioJJ-Usuarios -> fornece funcionalidades para gerenciar os usuarios, como o CRUD, login, troca e reset de senha.
 Esse serviço possui um Controller, onde chegam as requisições e conta com Services que separam as responsabilidades do sistema, como acesso ao
 banco de dados, serviço de e-mail e geração de Token.
+Foram criados dois serviços: 
+- TorneioJJ-Usuarios que controla toda a parte de CRUD de usuarios do sistema; 
+- TorneioJJ-Campeonatos, que cuida de toda a parte de cadastro de campeonatos;
+  Devem rodar ao mesmo tempo para fornecer todas as funcionalidades desenvolvidas.
 
 # **Importante:**:
 Para o envio do link de redefinicao de email, colocar a URL correta em appsettings, na seção:
