@@ -24,9 +24,13 @@ namespace TorneioJJ_Campeonatos.Controllers
         public IActionResult CadastrarCampeonato([FromBody] JsonElement novoCampeonato)
         {
             Campeonato campeonato = JsonSerializer.Deserialize<Campeonato>(novoCampeonato.GetRawText());
-
+            bool resposta = _campeonatoService.VerificaDestaques(campeonato);
+            if(resposta)
+            {
+                return BadRequest("Número de campeonatos em destaque excedido");
+            }
             string pathFoto = campeonato.Imagem;
-            campeonato.Imagem = "\\Fotos\\" + pathFoto;
+            campeonato.Imagem = pathFoto;
             // Verificar se o campeonato é duplicado
             if (_campeonatoService.CampeonatoDuplicado(campeonato))
             {
@@ -171,12 +175,17 @@ namespace TorneioJJ_Campeonatos.Controllers
         public IActionResult AtualizarCampeonato([FromBody] Campeonato campeonato)
         {
             var campeonatoExistente = _campeonatoService.ObterCampeonatoPorId(campeonato.Id);
-
+            
             if (campeonato == null)
             {
                 return NotFound("Campeonato não encontrado");
             }
 
+            bool resposta = _campeonatoService.VerificaDestaques(campeonato);
+            if(resposta)
+            {
+                return BadRequest("Número de campeonatos em destaque excedido");
+            }
             //Atualização dos campos
             campeonatoExistente.Codigo = campeonato.Codigo;
             campeonatoExistente.Titulo = campeonato.Titulo;
@@ -187,6 +196,7 @@ namespace TorneioJJ_Campeonatos.Controllers
             campeonatoExistente.InformacoesGerais = campeonato.InformacoesGerais;
             campeonatoExistente.EntradaPublico = campeonato.EntradaPublico;
             campeonatoExistente.Destaque = campeonato.Destaque;
+            campeonatoExistente.Tipo = campeonato.Tipo;
             campeonatoExistente.Fase = campeonato.Fase;
             campeonatoExistente.Status = campeonato.Status;
 

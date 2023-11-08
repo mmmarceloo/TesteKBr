@@ -27,6 +27,7 @@ namespace TorneioJJ_Campeonatos.Models
         public string EntradaPublico { get; set; }
 
         public string Destaque { get; set; }
+        public string Tipo { get; set; }
 
         public string Fase { get; set; }
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TorneioJJ_Campeonatos.Context;
 
@@ -11,9 +12,11 @@ using TorneioJJ_Campeonatos.Context;
 namespace TorneioJJ_Campeonatos.Migrations
 {
     [DbContext(typeof(CampeonatoDbContext))]
-    partial class CampeonatoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231108010729_Create")]
+    partial class Create
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

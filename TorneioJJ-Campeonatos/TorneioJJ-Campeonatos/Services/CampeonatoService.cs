@@ -85,6 +85,19 @@ namespace TorneioJJ_Campeonatos.Services
 
         }
 
+        public bool VerificaDestaques(Campeonato campeonato)
+        {
+            // Verifica se já existem 8 campeonatos com "destaque" igual a true
+            int campeonatosDestaqueCount = _context.Campeonatos.Count(c => c.Destaque == "true");
+
+            if (campeonatosDestaqueCount >= 8)
+            {
+                return true;
+            }
+
+                return false;
+        }
+
         public void ExcluirCampeonato(Campeonato campeonato)
         {
             if (campeonato != null)

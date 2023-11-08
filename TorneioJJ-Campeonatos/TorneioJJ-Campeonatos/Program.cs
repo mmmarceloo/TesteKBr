@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using TorneioJJ_Campeonatos.Context;
 using TorneioJJ_Campeonatos.Services;
 
@@ -15,7 +17,6 @@ builder.Services.AddDbContext<CampeonatoDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -43,6 +44,11 @@ app.UseCors(options =>
     options.AllowAnyHeader(); // Permitir qualquer cabeçalho HTTP
 });
 
-app.MapControllers();
+app.UseRouting(); // Adicione o middleware de roteamento
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers(); // Adicione o mapeamento para controladores
+});
 
 app.Run();
